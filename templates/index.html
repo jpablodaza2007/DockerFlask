@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Aprendices</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+            margin:40px;
+        }
+
+        .contenedor{
+            max-width:900px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        input{
+            padding:10px;
+            font-size:16px;
+        }
+
+        button{
+            padding:12px;
+            background:#198754;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#146c43;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:30px;
+        }
+
+        table,th,td{
+            border:1px solid #ccc;
+        }
+
+        th{
+            background:#198754;
+            color:white;
+        }
+
+        th,td{
+            padding:10px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+<h1>Registro de Aprendices ADSO</h1>
+
+<form action="/registrar" method="POST">
+
+<input
+type="text"
+name="nombre_completo"
+placeholder="Nombre Completo"
+required>
+
+<input
+type="text"
+name="numero_documento"
+placeholder="Número de Documento"
+required>
+
+<input
+type="text"
+name="ficha"
+placeholder="Número de Ficha"
+required>
+
+<button type="submit">
+Guardar
+</button>
+
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Documento</th>
+<th>Ficha</th>
+<th>Fecha</th>
+</tr>
+
+{% for aprendiz in aprendices %}
+
+<tr>
+
+<td>{{ aprendiz.id }}</td>
+
+<td>{{ aprendiz.nombre_completo }}</td>
+
+<td>{{ aprendiz.numero_documento }}</td>
+
+<td>{{ aprendiz.ficha }}</td>
+
+<td>{{ aprendiz.creado_en }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
