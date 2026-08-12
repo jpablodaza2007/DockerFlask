@@ -32,7 +32,7 @@ services:
 
   web:
     image:  juandazaalcazar/imagen:latest
-    container_name: app_produccion
+    container_name: appdaza
     ports:
       - "5050:5050"
     env_file:
