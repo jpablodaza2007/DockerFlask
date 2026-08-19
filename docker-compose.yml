@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   nginx-proxy-manager:
     image: 'jc21/nginx-proxy-manager:latest'
@@ -29,9 +31,8 @@ services:
     networks:
       - red_interna
 
-
   web:
-    image:  juandazaalcazar/imagen:latest
+    image: juandazaalcazar/imagen:latest
     container_name: appdaza
     ports:
       - "5050:5050"
@@ -42,7 +43,7 @@ services:
     networks:
       - red_interna
 
-uptime-kuma:
+  uptime-kuma:
     image: louislam/uptime-kuma:1
     container_name: uptime-kuma
     restart: always
@@ -51,11 +52,12 @@ uptime-kuma:
     volumes:
       - uptime-kuma-data:/app/data
     networks:
-      - red-interna
+      - red_interna
 
 networks:
   red_interna:
     driver: bridge
+
 volumes:
   db_data:
   uptime-kuma-data:
