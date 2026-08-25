@@ -29,6 +29,7 @@ jobs:
 
   #Construir y desplegar
   build-and-push:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Descargar codigo
