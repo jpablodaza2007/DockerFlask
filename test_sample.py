@@ -10,4 +10,4 @@ def client():
 def test_home_status_200(client):
     response = client.get('/')
     print(f"\nCodigo de estado devuelto: {response.status_code}") # <--- Agrega esto
-    assert response.status_code == 404
+    assert response.status_code == 200
