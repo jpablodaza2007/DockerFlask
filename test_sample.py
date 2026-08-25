@@ -8,11 +8,6 @@ def client():
         yield client
 
 def test_home_status_200(client):
-    """
-    Prueba unitaria que simula una petición GET a la ruta '/'
-    y valida estrictamente que responda con código HTTP 200 OK.
-    """
     response = client.get('/')
+    print(f"\nCodigo de estado devuelto: {response.status_code}") # <--- Agrega esto
     assert response.status_code == 200
-
-
