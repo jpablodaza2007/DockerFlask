@@ -18,4 +18,4 @@ def home():
         return f"<h1>Error de conexión</h1><p>{e}</p>"
 
 if __name__ == "__main__":
-    sample.run(host="0.0.0.0", port=5050, debug=True)  # nosec B104 B201
+    sample.run(host="0.0.0.0", port=5050, debug=True)  
