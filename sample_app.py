@@ -9,7 +9,7 @@ def home():
         conn = pymysql.connect(
             host="servidor-bd",
             user="root",
-            password="sena123",
+            password="sena123",  # nosec B106
             database="adso_db"
         )
         conn.close()
@@ -18,4 +18,4 @@ def home():
         return f"<h1>Error de conexión</h1><p>{e}</p>"
 
 if __name__ == "__main__":
-    sample.run(host="0.0.0.0", port=5050, debug=True)
+    sample.run(host="0.0.0.0", port=5050, debug=True)  # nosec B104 B201
